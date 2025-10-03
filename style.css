@@ -1,0 +1,85 @@
+:root {
+    --tile-size: 40px;
+    --gap: 2px;
+    --bg: #222;
+    --board-bg: #111111;
+    --space: rgba(221, 221, 221, 0.95);
+    --goal: #997af6;
+    --player: #332dd4;
+    --block: #b4094b;
+    --block-done: #16a34a;
+}
+
+body {
+    margin: 20px;
+    background: var(--bg);
+    color: #eee;
+    display: flex;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+}
+
+main { width: max-content; }
+h1 { margin: 0 0 8px; }
+p { margin: 0 0 12px; color: #ccc; font-size: 14px; }
+
+#game {
+    background: var(--board-bg);
+    padding: 12px;
+    border-radius: 8px;
+}
+
+#board {
+    display: grid;
+    gap: var(--gap);
+    background: #000;
+    padding: var(--gap);
+    border-radius: 6px;
+}
+
+
+.tile {
+    width: var(--tile-size);
+    height: var(--tile-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 4px;
+}
+
+.tile-wall { background: #333; }
+.tile-space { background: var(--space); }
+.tile-goal { background: var(--goal); border: 2px dashed rgba(0,0,0,0.3); }
+
+.entity {
+    position: absolute;
+    width: 72%;
+    height: 72%;
+    border-radius: 6px;
+}
+
+.entity-player { background: var(--player); }
+.entity-block { background: var(--block); }
+.entity-block-goal { background: var(--block-done); }
+
+
+#info {
+    margin-top: 12px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+#restart {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    background: #3b82f6;
+    color: white;
+    cursor: pointer;
+}
+#restart:hover { background: #2563eb; }
+
+#moves { font-weight: bold; }
+#status { font-weight: bold; color: #a3e635; margin-left: 8px; }
